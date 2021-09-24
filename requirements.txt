@@ -1,0 +1,4 @@
+torch==1.6.0
+transformers==4.9.2
+unbabel-comet==1.0.0rc5
+fire==0.4.0

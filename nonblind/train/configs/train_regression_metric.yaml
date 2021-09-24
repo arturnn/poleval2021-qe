@@ -1,0 +1,24 @@
+regression_metric:
+  class_path: comet.models.RegressionMetric
+  init_args:
+    nr_frozen_epochs: 8
+    keep_embeddings_frozen: True
+    optimizer: AdamW
+    encoder_learning_rate: 1.0e-05
+    learning_rate: 3.0e-05
+    layerwise_decay: 1.0
+    encoder_model: BERT
+    pretrained_model: allegro/herbert-large-cased
+    pool: avg
+    layer: mix
+    dropout: 0.15
+    batch_size: 4
+    train_data: data/train.csv 
+    validation_data: data/dev.csv 
+    hidden_sizes:
+      - 4096
+      - 2048
+    
+trainer: trainer.yaml
+early_stopping: early_stopping.yaml
+model_checkpoint: model_checkpoint.yaml
